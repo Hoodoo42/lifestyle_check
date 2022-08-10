@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <life-style-example></life-style-example>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LifeStyleExample from "@/components/LifeStyleExample.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    LifeStyleExample,
+  },
+
+  beforeCreate: function () {
+    console.log(`Runs before component is created`);
+  },
+  created: function () {
+    console.log(`Runs when component is created`);
+  },
+  beforeMount: function () {
+    console.log(`Runs before component is mounted`);
+  },
+  mounted: function () {
+    console.log(`Runs when component is mounted`);
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
